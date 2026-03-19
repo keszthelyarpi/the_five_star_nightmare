@@ -1,7 +1,7 @@
 # The five star nightmare
 
 ## A projektről
-A The five star nightmare egy 2D-s platformer és feladatkezelő játék. A játékos a hotel területén mozogva a morcos vendégek kiszolgálását, valamint szeszélyes, váratlan csavarokat tartogató kéréseik teljesítését végzi. A feladatok megoldásához hétköznapi képességeket (futás, ugrás, csúszás) kell használni, miközben akadályokat és ellenfeleket kell leküzdeni.
+A The five star nightmare egy 2D-s platformer és feladatkezelő játék. A játékos a hotel területén mozogva a morcos vendégek kiszolgálását, valamint szeszélyes, váratlan csavarokat tartogató kéréseik teljesítését végzi. A feladatok megoldásához hétköznapi képességeket (futás, ugrás, csúszás) kell használni, miközben akadályokat és ellenfeleket kell leküzdenie.
 
 ## Fejlesztők
 Zsíros Martin
