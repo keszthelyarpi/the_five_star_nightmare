@@ -1,14 +1,14 @@
 # The five star nightmare
 
-## A projektről
+### A projektről
 A The five star nightmare egy 2D-s platformer és feladatkezelő játék. A játékos a hotel területén mozogva a morcos vendégek kiszolgálását, valamint szeszélyes, váratlan csavarokat tartogató kéréseik teljesítését végzi. A feladatok megoldásához hétköznapi képességeket (futás, ugrás, csúszás) kell használni, miközben akadályokat és ellenfeleket kell leküzdenie.
 
-## Fejlesztők
-Zsíros Martin
-Keszthelyi Árpád
-Molnár Bálint Ottó
+### Fejlesztők
+Zsíros Martin (XO6M7X), 
+ Keszthelyi Árpád (I4KEBG),
+ Molnár Bálint Ottó (VP35W1)
 
-## Technológiák
+### Technológiák
 **Játékmotor:** Unity
 **Nyelv:** C#
 **Verziókezelés:** Git / GitHub
