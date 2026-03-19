@@ -1,6 +1,7 @@
 # the_five_star_nightmare
 Modern szoftverfejlesztési eszközök tárgyhoz The five star nightmare projektje.
-```classDiagram
+```mermaid
+classDiagram
     class GameManager {
         +Level currentLevel
         +Player player
