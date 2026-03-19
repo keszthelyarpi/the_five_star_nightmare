@@ -1,14 +1,5 @@
 # Sprint 1 Összefoglaló
 
-## Csapat felosztása
-
-
-
-
-
-
-
-
 ## 1. Csapat felosztása és felelősségi körök
 
 A projekt sikeres megvalósítása érdekében a feladatokat az alábbi szakmai felosztás szerint koordináljuk:
