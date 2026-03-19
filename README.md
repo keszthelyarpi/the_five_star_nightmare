@@ -99,4 +99,5 @@ classDiagram
     Interactable <|-- Enemy : leszármazottja
     Interactable <|-- QuestItem : leszármazottja
     NPC "1" --> "1" Mission : kiadja a feladatot
-    Mission "1" --> "1" QuestItem : megköveteli```
+    Mission "1" --> "1" QuestItem : megköveteli
+    ```
