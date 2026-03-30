@@ -6,22 +6,26 @@ public class PlayerInteraction : MonoBehaviour
 
     void Update()
     {
-        if (currentInteractable != null && Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.E))
         {
-            currentInteractable.Interact();
+            // Ha van aktív dialógus, azt léptetjük
+            if (DialogueManager.Instance.isDialogueActive)
+            {
+                DialogueManager.Instance.DisplayNextSentence();
+            }
+            // Ha nincs, de van akihez odaszólhatunk, interakcióba lépünk
+            else if (currentInteractable != null)
+            {
+                currentInteractable.Interact();
+            }
         }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log(collision.transform.position.ToString());
-        Debug.Log(collision.name);
-
         if (collision.TryGetComponent(out IInteractable interactable))
         {
-            Debug.Log(interactable);
             currentInteractable = interactable;
-            // Itt kapcsolhatod be a "DoorCanvas"-t vagy a Promptot
         }
     }
 
@@ -29,7 +33,11 @@ public class PlayerInteraction : MonoBehaviour
     {
         if (collision.TryGetComponent(out IInteractable interactable))
         {
-            if (currentInteractable == interactable) currentInteractable = null;
+            if (currentInteractable == interactable) 
+            {
+                currentInteractable = null;
+                DialogueManager.Instance.EndDialogue();
+            }
         }
     }
 }

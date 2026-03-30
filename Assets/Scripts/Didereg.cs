@@ -2,37 +2,33 @@ using UnityEngine;
 
 public class Didereg : MonoBehaviour, IInteractable
 {
-    public bool IsInteracted { get; private set; }
-    public GameObject InteractIcon;
-    public Didereg()
-    {
-        GameManager.OnStateChanged += CheckInteractibility;
-    }
-    public void CheckInteractibility()
-    {
-        if (GameManager.Milestones.Contains(Milestones.DideregFristTalk))
-        {
-            InteractIcon.SetActive(false);
-        }
-        else
-        {
-            InteractIcon.SetActive(true);
-        }
+    public DialogueData startQuestDialogue; // Küldetés előtt
+    public DialogueData inProgressDialogue; // Küldetés közben
+    public DialogueData completeQuestDialogue; // Küldetés után
 
-    }
+    public MilestoneSet requiredMilestone; // Mi kell a befejezéshez?
+    public MilestoneSet completedMilestone; // Mi legyen a jutalom milestone?
+
     public void Interact()
     {
-        if (GameManager.Milestones.Contains(Milestones.DideregFristTalk))
+        // 1. Ha már kész a küldetés
+        if (GameManager.Milestones.Contains(completedMilestone))
         {
-            Debug.Log("már a pincében kéne lenned.");
+            DialogueManager.Instance.StartDialogue(completeQuestDialogue);
         }
+        // 2. Ha megvannak a feltételek a befejezéshez
+        else if (GameManager.Milestones.Contains(requiredMilestone))
+        {
+            DialogueManager.Instance.StartDialogue(inProgressDialogue);
+        }
+        // 3. Ha még el sem kezdte vagy folyamatban van
         else
         {
-            Debug.Log("helo");
-            GameManager.AddMilestone(Milestones.DideregFristTalk);
+            DialogueManager.Instance.StartDialogue(startQuestDialogue);
+            GameManager.AddMilestone(requiredMilestone);
+            // Itt adhatod hozzá az "elkezdve" milestone-t
         }
-        // Itt hívd meg a DialogePanel-edet
     }
-    public string GetInteractText() => "Beszélgetés (E)";
 
+    public string GetInteractText() => "Beszélgetés";
 }
