@@ -14,6 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DialogueData
   characterName: Mr. Didereg
   sentences:
-  - "Kedves Fiam!\nOlyan hideg van a szob\xE1mban, hogy egy jegesmedve tudna ott
-    csak el\xE9lni. Meg is f\xE1ztam! H\xC1\xC1\xC1\xC1\xC1\xC1\xC1PSZIIIII!\nAzonnal
-    jav\xEDtsd meg nekem, mert nem \xE1llok j\xF3t magam\xE9rt!"
+  - 'Kedves Fiam!
+
+'
+  - "Olyan hideg van a szob\xE1mban, hogy egy jegesmedve tudna ott csak el\xE9lni.
+    Meg is f\xE1ztam! H\xC1\xC1\xC1\xC1\xC1\xC1\xC1PSZIIIII!\nAzonnal jav\xEDtsd
+    meg nekem, mert nem \xE1llok j\xF3t magam\xE9rt!"
