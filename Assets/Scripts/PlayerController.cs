@@ -86,6 +86,12 @@ public class PlayerController : MonoBehaviour
     {
         if (currentState == PlayerState.Dashing) return;
 
+        if (DialogueManager.Instance != null && DialogueManager.Instance.isDialogueActive)
+        {
+            // Megállítjuk a karaktert (opcionális, de ajánlott, hogy ne csússzon tovább)
+            rb.linearVelocity = Vector2.zero;
+            return;
+        }
         // Alapmozgás
         rb.linearVelocity = new Vector2(horizontal * moveSpeed, rb.linearVelocity.y);
     }

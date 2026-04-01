@@ -3,9 +3,11 @@ using UnityEngine;
 public class PlayerInteraction : MonoBehaviour
 {
     private IInteractable currentInteractable;
+    public TMPro.TextMeshProUGUI interactionText; // Ide húzd be a UI szöveget az Inspectorban!
 
     void Update()
     {
+        UpdateInteractionUI();
         if (Input.GetKeyDown(KeyCode.E))
         {
             // Ha van aktív dialógus, azt léptetjük
@@ -20,7 +22,20 @@ public class PlayerInteraction : MonoBehaviour
             }
         }
     }
+    private void UpdateInteractionUI()
+    {
+        // Ha nincs semmi a közelben, vagy épp beszélgetünk, ne látszódjon a felirat
+        if (currentInteractable == null || DialogueManager.Instance.isDialogueActive)
+        {
+            interactionText.gameObject.SetActive(false);
+            return;
+        }
 
+        // Egyébként aktiváljuk és lekérjük az egyedi szöveget (pl. "Belépés", "Beszélgetés")
+        interactionText.gameObject.SetActive(true);
+        interactionText.text = currentInteractable.GetInteractText();
+        return;
+    }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.TryGetComponent(out IInteractable interactable))
