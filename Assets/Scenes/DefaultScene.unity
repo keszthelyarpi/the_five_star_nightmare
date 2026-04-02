@@ -5999,6 +5999,7 @@ GameObject:
   m_Component:
   - component: {fileID: 769384991}
   - component: {fileID: 769384992}
+  - component: {fileID: 769384993}
   m_Layer: 5
   m_Name: Managers
   m_TagString: Untagged
@@ -6042,6 +6043,18 @@ MonoBehaviour:
   dialogueText: {fileID: 1449422086}
   typingSpeed: 0.02
   isDialogueActive: 0
+--- !u!114 &769384993
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 769384990}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 840c5a923f1abaa4cb1692378337109a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GameManager
 --- !u!1 &819419189
 GameObject:
   m_ObjectHideFlags: 0
@@ -6378,13 +6391,14 @@ GameObject:
   - component: {fileID: 1188113450}
   - component: {fileID: 1188113452}
   - component: {fileID: 1188113451}
+  - component: {fileID: 1188113453}
   m_Layer: 5
   m_Name: QuestPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1188113450
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6443,6 +6457,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1188113449}
   m_CullTransparentMesh: 1
+--- !u!114 &1188113453
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1188113449}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f7ab9d4cdd5421840b7faee8f8d34da2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TaskNotebookManager
+  taskText: {fileID: 1855634430}
 --- !u!1 &1203157178
 GameObject:
   m_ObjectHideFlags: 0
@@ -7967,8 +7994,10 @@ MonoBehaviour:
   startQuestDialogue: {fileID: 11400000, guid: 0b1a2b388ae8cb9408687ccbcf1c7bc4, type: 2}
   inProgressDialogue: {fileID: 11400000, guid: 778bd74232fe4584185303261aed0714, type: 2}
   completeQuestDialogue: {fileID: 11400000, guid: 822d0839dc5bbfa49a91262b51b51452, type: 2}
+  interactText: "Besz\xE9lget\xE9s (E)"
   requiredMilestone: 1
   completedMilestone: 2
+  finishingMilestone: 0
 --- !u!1 &2030627112
 GameObject:
   m_ObjectHideFlags: 0
@@ -7982,7 +8011,6 @@ GameObject:
   - component: {fileID: 2030627115}
   - component: {fileID: 2030627114}
   - component: {fileID: 2030627113}
-  - component: {fileID: 2030627118}
   - component: {fileID: 2030627119}
   m_Layer: 0
   m_Name: Player
@@ -8145,18 +8173,6 @@ Transform:
   - {fileID: 2136682950}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2030627118
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2030627112}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 840c5a923f1abaa4cb1692378337109a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::GameManager
 --- !u!114 &2030627119
 MonoBehaviour:
   m_ObjectHideFlags: 0
