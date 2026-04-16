@@ -9080,11 +9080,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerHealth
   maxHealth: 5
   heartImages:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 90243964}
+  - {fileID: 463217763}
+  - {fileID: 2116812164}
+  - {fileID: 826484404}
+  - {fileID: 1260040001}
   fullHeart: {fileID: -1620528548645724021, guid: b759d7f0d8c9c5848a6e4ba0a68a987b, type: 3}
   emptyHeart: {fileID: -6158238613462115032, guid: 901070c918aa6634cb9d5791184d5028, type: 3}
   iFrameDuration: 1.5
