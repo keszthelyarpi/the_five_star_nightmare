@@ -14,22 +14,25 @@ public class NPCController : MonoBehaviour, IInteractable
     public void Interact()
     {
         // 1. Ha már kész a küldetés
-        if (GameManager.Milestones.Contains(completedMilestone))
+        if (!GameManager.Milestones.Contains(finishingMilestone))
         {
-            DialogueManager.Instance.StartDialogue(completeQuestDialogue);
-            GameManager.AddMilestone(finishingMilestone);
-        }
-        // 2. Ha megvannak a feltételek a befejezéshez
-        else if (GameManager.Milestones.Contains(requiredMilestone))
-        {
-            DialogueManager.Instance.StartDialogue(inProgressDialogue);
-        }
-        // 3. Ha még el sem kezdte vagy folyamatban van
-        else
-        {
-            DialogueManager.Instance.StartDialogue(startQuestDialogue);
-            GameManager.AddMilestone(requiredMilestone);
-            // Itt adhatod hozzá az "elkezdve" milestone-t
+            if (GameManager.Milestones.Contains(completedMilestone))
+            {
+                DialogueManager.Instance.StartDialogue(completeQuestDialogue);
+                GameManager.AddMilestone(finishingMilestone);
+            }
+            // 2. Ha megvannak a feltételek a befejezéshez
+            else if (GameManager.Milestones.Contains(requiredMilestone))
+            {
+                DialogueManager.Instance.StartDialogue(inProgressDialogue);
+            }
+            // 3. Ha még el sem kezdte vagy folyamatban van
+            else
+            {
+                DialogueManager.Instance.StartDialogue(startQuestDialogue);
+                GameManager.AddMilestone(requiredMilestone);
+                // Itt adhatod hozzá az "elkezdve" milestone-t
+            }
         }
     }
 
