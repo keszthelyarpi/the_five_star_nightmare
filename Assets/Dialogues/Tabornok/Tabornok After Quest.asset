@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fefb186eed8b8fc479d5f4af405e9691, type: 3}
   m_Name: Tabornok After Quest
   m_EditorClassIdentifier: Assembly-CSharp::DialogueData
-  characterName: 
+  characterName: "T\xE1bornok"
   sentences:
   - "K\xFCldet\xE9s ut\xE1ni sz\xF6veg T."

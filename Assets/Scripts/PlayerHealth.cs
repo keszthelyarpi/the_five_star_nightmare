@@ -69,7 +69,7 @@ public class PlayerHealth : MonoBehaviour
     private void Respawn()
     {
         transform.position = startPosition;
-
+        Input.ResetInputAxes();
         if (TryGetComponent(out Rigidbody2D rb))
             rb.linearVelocity = Vector2.zero;
 
