@@ -57,10 +57,12 @@ public class DialogueManager : MonoBehaviour
     public void EndDialogue()
     {
         isDialogueActive = false;
-        dialogueBox.SetActive(false);
+        if (dialogueBox != null)
+        {
+            dialogueBox.SetActive(false);
+        }
         if (typingCoroutine != null) StopCoroutine(typingCoroutine);
     }
-
     IEnumerator TypeSentence(string sentence)
     {
         dialogueText.text = "";

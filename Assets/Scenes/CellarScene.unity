@@ -1912,6 +1912,7 @@ GameObject:
   - component: {fileID: 231974973}
   - component: {fileID: 231974976}
   - component: {fileID: 231974977}
+  - component: {fileID: 231974978}
   m_Layer: 0
   m_Name: water_wheel_0
   m_TagString: Untagged
@@ -2038,13 +2039,47 @@ MonoBehaviour:
   m_GameObject: {fileID: 231974972}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 881f96487c8177848aab8c10c7c6187d, type: 3}
+  m_Script: {fileID: 11500000, guid: f8fe9adae051c6c42b3f97e269f9263d, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::BoilerWheel
-  rotationAngle: -180
-  rotationSpeed: 1
+  m_EditorClassIdentifier: Assembly-CSharp::LevelEndObjective
+  requiredMilestone: 1
+  grantedMilestone: 2
+  levelCompleteMilestone: 3
+  textWhenDone: "M\xE1r m\u0171k\xF6dik"
+  textWhenLocked: "Be van rozsd\xE1sodva... (Besz\xE9lj a vend\xE9ggel)"
+  textWhenReady: "Haszn\xE1lat (E)"
   winDialogue: {fileID: 11400000, guid: 822d0839dc5bbfa49a91262b51b51452, type: 2}
   lobbySceneName: DefaultScene
+  onObjectiveCompleted:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 231974978}
+        m_TargetAssemblyTypeName: SimpleRotator, Assembly-CSharp
+        m_MethodName: StartRotation
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &231974978
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 231974972}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da2c438e6564abf40b2d8c8eaa7b7df3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SimpleRotator
+  rotationAngle: -180
+  speed: 1
+  targetTransform: {fileID: 231974974}
 --- !u!1 &242075878
 GameObject:
   m_ObjectHideFlags: 0
@@ -18602,50 +18637,6 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
---- !u!1 &844620525
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 844620527}
-  - component: {fileID: 844620526}
-  m_Layer: 0
-  m_Name: Managers
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &844620526
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 844620525}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 840c5a923f1abaa4cb1692378337109a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::GameManager
---- !u!4 &844620527
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 844620525}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 116.6153, y: -33.46168, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &850715139
 GameObject:
   m_ObjectHideFlags: 0
@@ -27725,4 +27716,3 @@ SceneRoots:
   - {fileID: 1960206298}
   - {fileID: 263352118}
   - {fileID: 542454123}
-  - {fileID: 844620527}

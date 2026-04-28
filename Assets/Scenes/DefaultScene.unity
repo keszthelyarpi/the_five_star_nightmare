@@ -13444,7 +13444,7 @@ SpriteRenderer:
   m_SortingOrder: 1
   m_MaskInteraction: 0
   m_Sprite: {fileID: -9095717837082945937, guid: 207ee8102dd4143d288186ef0be518ee, type: 3}
-  m_Color: {r: 0, g: 0.36008024, b: 1, a: 1}
+  m_Color: {r: 1, g: 0, b: 0.8489032, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -14112,6 +14112,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1562842496}
   - component: {fileID: 1562842495}
+  - component: {fileID: 1562842498}
+  - component: {fileID: 1562842497}
   m_Layer: 0
   m_Name: DoorToElevator
   m_TagString: Untagged
@@ -14193,6 +14195,66 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &1562842497
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1562842494}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: -0.21495676}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 10.24, y: 15.31}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 7.7671127, y: 11.612744}
+  m_EdgeRadius: 0
+--- !u!114 &1562842498
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1562842494}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4b4b0d682e3b114294c5b3804460d0e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LevelDoor
+  sceneToLoad: ElevatorScene
+  requiredMilestone: 4
 --- !u!1 &1592295384
 GameObject:
   m_ObjectHideFlags: 0
@@ -14386,9 +14448,8 @@ MonoBehaviour:
   inProgressDialogue: {fileID: 11400000, guid: a7cebb8e47a41054c91800a9648fcc5f, type: 2}
   completeQuestDialogue: {fileID: 11400000, guid: ca62b133cad453e448dde6d16d25c40e, type: 2}
   interactText: "Besz\xE9lget\xE9s (E)"
-  requiredMilestone: 3
-  completedMilestone: 4
-  finishingMilestone: 5
+  requiredMilestone: 4
+  completedMilestone: 5
 --- !u!1 &1620647546
 GameObject:
   m_ObjectHideFlags: 0
@@ -14471,7 +14532,7 @@ SpriteRenderer:
   m_SortingOrder: 1
   m_MaskInteraction: 0
   m_Sprite: {fileID: -9095717837082945937, guid: 207ee8102dd4143d288186ef0be518ee, type: 3}
-  m_Color: {r: 0, g: 0.36008024, b: 1, a: 1}
+  m_Color: {r: 0, g: 1, b: 0.07041359, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -14995,9 +15056,8 @@ MonoBehaviour:
   inProgressDialogue: {fileID: 11400000, guid: dae1e9a1a29ba7345b1b47d6c266aa02, type: 2}
   completeQuestDialogue: {fileID: 11400000, guid: 185436bd8ceb893429b96937812dbd26, type: 2}
   interactText: "Besz\xE9lget\xE9s (E)"
-  requiredMilestone: 6
-  completedMilestone: 7
-  finishingMilestone: 8
+  requiredMilestone: 7
+  completedMilestone: 8
 --- !u!1 &1735487108
 GameObject:
   m_ObjectHideFlags: 0
@@ -16310,7 +16370,6 @@ MonoBehaviour:
   interactText: "Besz\xE9lget\xE9s (E)"
   requiredMilestone: 1
   completedMilestone: 2
-  finishingMilestone: 2
 --- !u!1 &2030627112
 GameObject:
   m_ObjectHideFlags: 0

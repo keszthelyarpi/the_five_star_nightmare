@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fefb186eed8b8fc479d5f4af405e9691, type: 3}
   m_Name: Madambe Before Quest
   m_EditorClassIdentifier: Assembly-CSharp::DialogueData
-  characterName: 
-  sentences: []
+  characterName: "Pomp\xE1s Madame"
+  sentences:
+  - "Madambe vagyok amikor elmondom a k\xFCldet\xE9st"

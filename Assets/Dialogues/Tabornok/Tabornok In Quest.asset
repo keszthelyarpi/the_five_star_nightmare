@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: Tabornok In Quest
   m_EditorClassIdentifier: Assembly-CSharp::DialogueData
   characterName: 
-  sentences: []
+  sentences:
+  - "M\xE1r elmondta a k\xFCldet\xE9st T."

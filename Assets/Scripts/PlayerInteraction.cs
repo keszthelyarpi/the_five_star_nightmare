@@ -51,7 +51,10 @@ public class PlayerInteraction : MonoBehaviour
             if (currentInteractable == interactable) 
             {
                 currentInteractable = null;
-                DialogueManager.Instance.EndDialogue();
+                if (DialogueManager.Instance != null)
+                {
+                    DialogueManager.Instance.EndDialogue();
+                }
             }
         }
     }
