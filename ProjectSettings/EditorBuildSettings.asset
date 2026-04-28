@@ -14,6 +14,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/CellarScene.unity
     guid: 4a51eb9a3221b7a4f8c68b992418ed15
+  - enabled: 1
+    path: Assets/Scenes/ElevatorScene.unity
+    guid: 0fc04b9c30f7070418070e36380963fc
+  - enabled: 1
+    path: Assets/Scenes/RoofSpaceScene.unity
+    guid: a228e49a87c2a194b8996bb18b93fcac
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0
