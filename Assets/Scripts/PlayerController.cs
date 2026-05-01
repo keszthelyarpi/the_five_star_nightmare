@@ -6,7 +6,7 @@ public class PlayerController : MonoBehaviour
     [Header("Mozgási Beállítások")]
     public float moveSpeed = 10f;
     public float jumpForce = 16f;
-    [Range(0f, 1f)] public float jumpCutMultiplier = 0.5f; // Dinamikus ugrásmagassághoz
+    [Range(0f, 1f)] public float jumpCutMultiplier = 0.5f;
 
     [Header("Időzítések (Pro Funkciók)")]
     public float coyoteTime = 0.2f;
@@ -26,19 +26,28 @@ public class PlayerController : MonoBehaviour
     public Transform groundCheck;
     public LayerMask groundLayer;
 
-    private float horizontal;
-    private bool isFacingRight = true;
+    private Animator animator;
 
-    // Állapotgép (State Machine)
+    private float horizontal;
+    private bool isFacingRight = false;
+
     public enum PlayerState { Grounded, Airborne, Dashing }
     public PlayerState currentState = PlayerState.Airborne;
 
+    void Start()
+    {
+        animator = GetComponent<Animator>();
+
+        if (animator == null)
+        {
+            animator = GetComponentInChildren<Animator>();
+        }
+    }
+
     void Update()
     {
-        // Bemenetek folyamatos figyelése
         horizontal = Input.GetAxisRaw("Horizontal");
 
-        // 1. Coyote Time kezelése
         if (IsGrounded())
         {
             coyoteTimeCounter = coyoteTime;
@@ -50,7 +59,6 @@ public class PlayerController : MonoBehaviour
             if (currentState != PlayerState.Dashing) currentState = PlayerState.Airborne;
         }
 
-        // 2. Input Buffering (Ugrás előkészítése)
         if (Input.GetButtonDown("Jump"))
         {
             jumpBufferCounter = jumpBufferTime;
@@ -60,26 +68,28 @@ public class PlayerController : MonoBehaviour
             jumpBufferCounter -= Time.deltaTime;
         }
 
-        // 3. Ugrás végrehajtása (Coyote + Buffer kombinációja)
         if (jumpBufferCounter > 0f && coyoteTimeCounter > 0f)
         {
             Jump();
         }
 
-        // 4. Dinamikus ugrásmagasság (Ha elengeded a gombot, lassul az emelkedés)
         if (Input.GetButtonUp("Jump") && rb.linearVelocity.y > 0f)
         {
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, rb.linearVelocity.y * jumpCutMultiplier);
             coyoteTimeCounter = 0f;
         }
 
-        // 5. Dash indítása
         if (Input.GetKeyDown(KeyCode.LeftShift) && canDash)
         {
             StartCoroutine(Dash());
         }
 
         Flip();
+
+        // ANIMÁCIÓK FRISSÍTÉSE
+        animator.SetFloat("xVelocity", Mathf.Abs(rb.linearVelocity.x));
+        animator.SetFloat("yVelocity", rb.linearVelocity.y);
+        animator.SetBool("isJumping", !IsGrounded());
     }
 
     void FixedUpdate()
@@ -88,18 +98,17 @@ public class PlayerController : MonoBehaviour
 
         if (DialogueManager.Instance != null && DialogueManager.Instance.isDialogueActive)
         {
-            // Megállítjuk a karaktert (opcionális, de ajánlott, hogy ne csússzon tovább)
             rb.linearVelocity = Vector2.zero;
             return;
         }
-        // Alapmozgás
+
         rb.linearVelocity = new Vector2(horizontal * moveSpeed, rb.linearVelocity.y);
     }
 
     private void Jump()
     {
         rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
-        jumpBufferCounter = 0f; // Puffer ürítése ugrás után
+        jumpBufferCounter = 0f;
     }
 
     private IEnumerator Dash()
@@ -108,13 +117,16 @@ public class PlayerController : MonoBehaviour
         currentState = PlayerState.Dashing;
 
         float originalGravity = rb.gravityScale;
-        rb.gravityScale = 0f; // Gravitáció kikapcsolása a specifikáció szerint
+        rb.gravityScale = 0f;
         rb.linearVelocity = new Vector2(horizontal * dashForce, 0f);
+
+        // Opcionális: Ha van Dash animációtok, itt lehet bekapcsolni: animator.SetBool("isDashing", true);
 
         yield return new WaitForSeconds(dashDuration);
 
         rb.gravityScale = originalGravity;
         currentState = PlayerState.Airborne;
+        // Opcionális: Itt pedig kikapcsolni: animator.SetBool("isDashing", false);
 
         yield return new WaitForSeconds(dashCooldown);
         canDash = true;
