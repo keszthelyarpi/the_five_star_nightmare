@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DialogueData
   characterName: "Pomp\xE1s Madame"
   sentences:
-  - "k\xE9sz a k\xFCldet\xE9s"
+  - "Maga egy h\u0151s! Hogy is h\xEDvj\xE1k.... J..... Na mindegy. Puszi!"

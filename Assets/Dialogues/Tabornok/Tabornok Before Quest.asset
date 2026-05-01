@@ -14,4 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DialogueData
   characterName: "T\xE1bornok"
   sentences:
-  - "K\xFCldet\xE9s elmond\xE1sa T."
+  - "Katon... iz\xE9, londiner! Elment a k\xE9p! Most kezd\u0151dik a meccs! Ha 5
+    percen bel\xFCl\r\nnem j\xF6n vissza az ad\xE1s, hadb\xEDr\xF3s\xE1g el\xE9 \xE1ll\xEDtom!"

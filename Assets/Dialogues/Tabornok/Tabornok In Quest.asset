@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DialogueData
   characterName: "T\xE1bornok"
   sentences:
-  - "M\xE1r elmondta a k\xFCldet\xE9st T."
+  - "Ir\xE1ny a padl\xE1son kereszt\xFCl a tet\u0151, \xE1ll\xEDtsd be az antenn\xE1t!"

@@ -14,4 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DialogueData
   characterName: "Pomp\xE1s Madame"
   sentences:
-  - "Madambe vagyok amikor elmondom a k\xFCldet\xE9st"
+  - "A lift nem mozdul! \xC9n biztosan nem fogok l\xE9pcs\u0151zni ebben a cip\u0151ben!
+    Ind\xEDtsa el!"
