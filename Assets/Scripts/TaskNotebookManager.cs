@@ -1,16 +1,15 @@
 using UnityEngine;
-using TMPro; // A specifikáció TextMeshPro-t kér
+using TMPro;
 
 public class TaskNotebookManager : MonoBehaviour
 {
     [Header("UI Referencia")]
-    public TextMeshProUGUI taskText; // A jegyzettömbben lévő szövegmező
+    public TextMeshProUGUI taskText;
 
     void Start()
     {
-        // Feliratkozunk a GameManager eseményére
         GameManager.OnStateChanged += UpdateTaskUI;
-        UpdateTaskUI(); // Kezdő állapot beállítása
+        UpdateTaskUI();
     }
 
     void OnDestroy()
@@ -18,42 +17,58 @@ public class TaskNotebookManager : MonoBehaviour
         GameManager.OnStateChanged -= UpdateTaskUI;
     }
 
-    // Ez a függvény fut le minden Milestone változáskor
     void UpdateTaskUI()
     {
-        // Alapértelmezett szöveg, ha nincs aktív küldetés
         string currentObjective = "Nincs aktív feladat.";
 
-        // A specifikáció szerinti lineáris haladás lekezelése
-
-        // 1. SZINT: PINCE
+        // 1. SZINT: PINCE (Mr. Didereg)
         if (GameManager.Milestones.Contains(MilestoneSet.GameStarted) && !GameManager.Milestones.Contains(MilestoneSet.TalkedToMrDidereg))
         {
-            gameObject.SetActive(true);
             currentObjective = "- Keress valakit, aki fázik a földszinten!";
         }
         else if (GameManager.Milestones.Contains(MilestoneSet.TalkedToMrDidereg) && !GameManager.Milestones.Contains(MilestoneSet.BoilerStarted))
         {
-            currentObjective = "- Irány a pince! Keresd meg a szelepkereket!";
+            currentObjective = "- Irány a pince! Keresd meg a Szelepkereket és indítsd be a fűtést!";
         }
         else if (GameManager.Milestones.Contains(MilestoneSet.BoilerStarted) && !GameManager.Milestones.Contains(MilestoneSet.Level1Completed))
         {
-            currentObjective = "- A kazán megy. Mondd meg a jó hírt Mr. Dideregnek!";
+            currentObjective = "- A kazán üzemel. Mondd meg a jó hírt Mr. Dideregnek!";
         }
 
-        // 2. SZINT: LIFTAKNA
+        // 2. SZINT: LIFTAKNA (Madame Pompás)
         else if (GameManager.Milestones.Contains(MilestoneSet.Level1Completed) && !GameManager.Milestones.Contains(MilestoneSet.TalkedToMadamePompas))
         {
-            currentObjective = "- Segíts Madame Pompásnak a liftnél!";
+            currentObjective = "- Madame Pompás a liftnél várakozik. Beszélj vele!";
         }
         else if (GameManager.Milestones.Contains(MilestoneSet.TalkedToMadamePompas) && !GameManager.Milestones.Contains(MilestoneSet.PowerRestored))
         {
-            currentObjective = "- Mássz fel a liftaknába és javítsd meg a biztosítékot!";
+            currentObjective = "- Mássz fel a liftakna tetejéhez és indítsd újra az áramot!";
+        }
+        else if (GameManager.Milestones.Contains(MilestoneSet.PowerRestored) && !GameManager.Milestones.Contains(MilestoneSet.Level2Completed))
+        {
+            currentObjective = "- Van áram! Jelezd Madame Pompásnak, hogy indulhat a lift!";
         }
 
-        // ... és így tovább a többi szintnél
+        // 3. SZINT: PADLÁS (A Tábornok)
+        else if (GameManager.Milestones.Contains(MilestoneSet.Level2Completed) && !GameManager.Milestones.Contains(MilestoneSet.TalkedToGeneral))
+        {
+            currentObjective = "- Keresd meg a Tábornokot a legfelső emeleten!";
+        }
+        else if (GameManager.Milestones.Contains(MilestoneSet.TalkedToGeneral) && !GameManager.Milestones.Contains(MilestoneSet.AntennaAdjusted))
+        {
+            currentObjective = "- Irány a padláson keresztül a tető, állítsd be az antennát!";
+        }
+        else if (GameManager.Milestones.Contains(MilestoneSet.AntennaAdjusted) && !GameManager.Milestones.Contains(MilestoneSet.AllMissionsDone))
+        {
+            currentObjective = "- Tiszta a vétel! Térj vissza a Tábornokhoz!";
+        }
 
-        // Végül frissítjük a kijelzőt
+        // JÁTÉK VÉGE
+        else if (GameManager.Milestones.Contains(MilestoneSet.AllMissionsDone))
+        {
+            currentObjective = "- Mindenki elégedett. Élvezd a hotel nyugalmát!";
+        }
+
         taskText.text = currentObjective;
     }
 }

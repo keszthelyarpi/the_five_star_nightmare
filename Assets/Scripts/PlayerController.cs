@@ -94,6 +94,8 @@ public class PlayerController : MonoBehaviour
 
     void FixedUpdate()
     {
+        if (PauseManager.isPaused) return;
+
         if (currentState == PlayerState.Dashing) return;
 
         if (DialogueManager.Instance != null && DialogueManager.Instance.isDialogueActive)
