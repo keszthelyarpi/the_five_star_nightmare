@@ -1885,7 +1885,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 4
+  m_SortingOrder: 2
   m_MaskInteraction: 0
   m_Sprite: {fileID: -7590702001161453250, guid: 0003a8f93ddcee34baf01a381ab6df23, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -22354,7 +22354,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -35.63925, y: 0, z: -262.7639, w: -25.370344}
+  m_margin: {x: -42.920303, y: 0, z: -470.27496, w: -25.370344}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0

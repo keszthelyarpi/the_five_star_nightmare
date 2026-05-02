@@ -17795,7 +17795,7 @@ Tilemap:
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
       m_AllTileFlags: 1073741825
-  - first: {x: 0, y: 45, z: 0}
+  - first: {x: 1, y: 45, z: 0}
     second:
       serializedVersion: 2
       m_TileIndex: 2
@@ -28210,7 +28210,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -35.63925, y: 0, z: -262.7639, w: -25.370344}
+  m_margin: {x: -47.55629, y: 0, z: -450.2583, w: -25.370344}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
