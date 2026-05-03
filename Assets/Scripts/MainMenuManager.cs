@@ -4,7 +4,7 @@ using UnityEngine.SceneManagement;
 public class MainMenuManager : MonoBehaviour
 {
     [Header("Pálya beállítások")]
-    public string firstLevelName = "DefaultScene"; // Ide írd az első jeleneted nevét
+    public string firstLevelName = "DefaultScene";
 
     [Header("Panelek")]
     public GameObject mainPanel;    
@@ -12,7 +12,6 @@ public class MainMenuManager : MonoBehaviour
 
     void Start()
     {
-        // Alapértelmezetten a főmenü látszik, a beállítások nem
         ShowMainPanel();
     }
 

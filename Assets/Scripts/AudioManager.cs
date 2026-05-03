@@ -2,10 +2,10 @@ using UnityEngine;
 
 public class AudioManager : MonoBehaviour
 {
-    public static AudioManager Instance;
+    public static AudioManager Instance { get; private set; }
 
-    [Header("Háttérzene")]
-    public AudioSource bgmSource;
+    [Header("Audio Források")]
+    [SerializeField] private AudioSource musicSource; // A háttérzenének
 
     void Awake()
     {
@@ -17,17 +17,17 @@ public class AudioManager : MonoBehaviour
         else
         {
             Destroy(gameObject);
+            return;
         }
     }
 
-    
-    public void PlayBGM(AudioClip newMusic)
+    public void PlayMusic(AudioClip musicClip)
     {
-        if (bgmSource.clip == newMusic) return; 
+        if (musicClip == null || musicSource.clip == musicClip) return;
 
-        bgmSource.Stop();
-        bgmSource.clip = newMusic;
-        bgmSource.loop = true;
-        bgmSource.Play();
+        musicSource.clip = musicClip;
+        musicSource.loop = true;
+        musicSource.Play();
     }
+
 }

@@ -5,7 +5,9 @@ public class LevelDoor : MonoBehaviour, IInteractable
 {
     [Header("Beállítások")]
     public string sceneToLoad;           // A betöltendő pálya neve (pl. "BoilerRoom")
+    public string secondSceneToLoad;
     public MilestoneSet requiredMilestone; // Mi kell a belépéshez? (pl. TalkedToMrDidereg)
+    public MilestoneSet switchMilestone;
 
     public string GetInteractText()
     {
@@ -22,7 +24,11 @@ public class LevelDoor : MonoBehaviour, IInteractable
     public void Interact()
     {
         // Ellenőrizzük a feltételt a GameManager-ben
-        if (GameManager.Milestones.Contains(requiredMilestone))
+        if (GameManager.Milestones.Contains(switchMilestone))
+        {
+            SceneManager.LoadScene(secondSceneToLoad);
+        }
+        else if (GameManager.Milestones.Contains(requiredMilestone))
         {
             Debug.Log(sceneToLoad + " betöltése...");
             SceneManager.LoadScene(sceneToLoad);
