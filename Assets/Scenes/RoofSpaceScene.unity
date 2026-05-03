@@ -18318,7 +18318,7 @@ MonoBehaviour:
   textWhenLocked: "Ez egy antenna... (Besz\xE9lj a vend\xE9ggel)"
   textWhenReady: "Be\xE1ll\xEDt\xE1s (E)"
   winDialogue: {fileID: 11400000, guid: 185436bd8ceb893429b96937812dbd26, type: 2}
-  lobbySceneName: DefaultScene
+  lobbySceneName: EndScene
   onObjectiveCompleted:
     m_PersistentCalls:
       m_Calls: []
