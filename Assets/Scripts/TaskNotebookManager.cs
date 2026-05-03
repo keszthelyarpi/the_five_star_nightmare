@@ -19,7 +19,7 @@ public class TaskNotebookManager : MonoBehaviour
 
     void UpdateTaskUI()
     {
-        string currentObjective = "Nincs aktív feladat.";
+        string currentObjective = "- Keress valakit, aki fázik a földszinten!";
 
         // 1. SZINT: PINCE (Mr. Didereg)
         if (GameManager.Milestones.Contains(MilestoneSet.GameStarted) && !GameManager.Milestones.Contains(MilestoneSet.TalkedToMrDidereg))
