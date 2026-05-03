@@ -530,6 +530,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::LevelDoor
   sceneToLoad: CellarScene
   secondSceneToLoad: CellarScene
+  textWhenClose: "Z\xE1rva. Besz\xE9lj egy emberrel."
   requiredMilestone: 1
   switchMilestone: 3
 --- !u!61 &128057696
@@ -1016,7 +1017,7 @@ Transform:
   m_GameObject: {fileID: 327316688}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 8.71, y: 4.02, z: 0}
+  m_LocalPosition: {x: 42.79, y: 16.49, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -13822,7 +13823,7 @@ Transform:
   m_GameObject: {fileID: 1219440496}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.26, z: 0}
+  m_LocalPosition: {x: 1.27, y: 0.26, z: 0}
   m_LocalScale: {x: 0.6, y: 0.6, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -13879,7 +13880,7 @@ SpriteRenderer:
   m_MaskInteraction: 0
   m_Sprite: {fileID: 8344170200855127296, guid: 7bad051a9030d9a4eb289b5edc3d8f9f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
+  m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 1, y: 2}
@@ -15193,6 +15194,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::LevelDoor
   sceneToLoad: ElevatorScene
   secondSceneToLoad: RoofSpaceScene
+  textWhenClose: "Z\xE1rva. Besz\xE9lj egy emberrel."
   requiredMilestone: 4
   switchMilestone: 7
 --- !u!1 &1610989855
@@ -15444,7 +15446,7 @@ SpriteRenderer:
   m_MaskInteraction: 0
   m_Sprite: {fileID: 7998350928237283144, guid: 5bbec59cd618b3542945c187a29d18ac, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
+  m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 1, y: 2}
@@ -15803,7 +15805,7 @@ Transform:
   m_GameObject: {fileID: 1683590399}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 9.44, y: 4.02, z: 0}
+  m_LocalPosition: {x: 47.75, y: 16.33, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:

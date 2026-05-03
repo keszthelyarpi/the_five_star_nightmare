@@ -6,6 +6,7 @@ public class LevelDoor : MonoBehaviour, IInteractable
     [Header("Beállítások")]
     public string sceneToLoad;           // A betöltendő pálya neve (pl. "BoilerRoom")
     public string secondSceneToLoad;
+    public string textWhenClose;
     public MilestoneSet requiredMilestone; // Mi kell a belépéshez? (pl. TalkedToMrDidereg)
     public MilestoneSet switchMilestone;
 
@@ -18,7 +19,7 @@ public class LevelDoor : MonoBehaviour, IInteractable
         }
 
         // Ha nincs meg, jelezzük, hogy zárva van
-        return "Zárva... (Beszélj a megfelelő vendéggel)";
+        return textWhenClose;
     }
 
     public void Interact()
